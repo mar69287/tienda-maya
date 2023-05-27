@@ -1,9 +1,11 @@
 import AboutCard from '../../components/AboutCard';
+import KitchenCard from '../../components/KitchenCard';
 
 const HomePage = () => {
   return (
     <>
-        <AboutCard />
+      <KitchenCard />
+      <AboutCard />
     </>
   );
 };

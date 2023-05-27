@@ -13,7 +13,7 @@ const NonUserNavBar = () => {
         <Box>
             <HStack width={{xl: '100%', '2xl': '1400px'}} m='0px auto' justifyContent={'space-between'} p='0 1.2rem'>
                 <Hide above='sm'>
-                    <HStack>
+                    <HStack borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
                         <RxHamburgerMenu size={iconSize}/>
                     </HStack>
                 </Hide>

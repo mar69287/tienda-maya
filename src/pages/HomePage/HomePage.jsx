@@ -1,11 +1,11 @@
-import logo from '../../assets/tienda-image.png'
-import { Image } from '@chakra-ui/react'
-
+import AboutCard from '../../components/AboutCard';
 
 const HomePage = () => {
   return (
-    <div>Hi</div>
-  )
-}
+    <>
+        <AboutCard />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;

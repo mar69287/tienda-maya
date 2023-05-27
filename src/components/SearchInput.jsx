@@ -19,7 +19,7 @@ const SearchInput = ({setSearchText}) => {
         <Input
           ref={ref}
           borderRadius={5}
-          placeholder="Search items..."
+          placeholder="What can we help you find?"
           variant="filled"
         />
       </InputGroup>

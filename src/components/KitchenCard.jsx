@@ -3,8 +3,8 @@ import kitchen from '../assets/tienda-kitchen.png'
 
 const KitchenImage = () => {
     return (
-      <Box w='100%' position='relative'>
-        <Img src={kitchen} h='40rem' w='100%' objectFit='cover' objectPosition='center' />
+      <Box w='100%' h='100%' position='relative'>
+        <Img src={kitchen} h='100%' w='100%' objectFit='cover' objectPosition='center' />
         <Stack
           direction='column'
           align='center'

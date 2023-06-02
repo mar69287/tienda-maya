@@ -1,12 +1,25 @@
 import { Box, Flex, IconButton } from '@chakra-ui/react';
-import React, { useState } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import React, { useState, useEffect } from 'react';
 import KitchenCard from './KitchenCard';
 import ClothingCard from './ClothingCard';
 
 const HeroCarousel = () => {
   const [activeCard, setActiveCard] = useState(0);
   const cards = [<KitchenCard />, <ClothingCard />];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveCard((prevCard) => (prevCard === cards.length - 1 ? 0 : prevCard + 1));
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [activeCard]);
+
+  const handleDotClick = (index) => {
+    setActiveCard(index);
+  };
 
   return (
     <Box as='section' w="100%" h="40rem" position="relative" mb='3rem'>
@@ -33,7 +46,7 @@ const HeroCarousel = () => {
           bg={activeCard === 0 ? 'gray.100' : 'gray.400'}
           mx={1}
           cursor="pointer"
-          onClick={() => setActiveCard(0)}
+          onClick={() => handleDotClick(0)}
           p='.3rem'
         />
         <Box
@@ -43,7 +56,7 @@ const HeroCarousel = () => {
           bg={activeCard === 1 ? 'gray.100' : 'gray.400'}
           mx={1}
           cursor="pointer"
-          onClick={() => setActiveCard(1)}
+          onClick={() => handleDotClick(1)}
           p='.3rem'
         />
       </Flex>

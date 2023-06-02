@@ -9,7 +9,7 @@ const HeroCarousel = () => {
   const cards = [<KitchenCard />, <ClothingCard />];
 
   return (
-    <Box w="100%" h="40rem" position="relative">
+    <Box w="100%" h="40rem" position="relative" mb='3rem'>
       {cards.map((card, index) => (
         <Box
           key={index}
@@ -34,6 +34,7 @@ const HeroCarousel = () => {
           mx={1}
           cursor="pointer"
           onClick={() => setActiveCard(0)}
+          p='.3rem'
         />
         <Box
           w="2"
@@ -43,6 +44,7 @@ const HeroCarousel = () => {
           mx={1}
           cursor="pointer"
           onClick={() => setActiveCard(1)}
+          p='.3rem'
         />
       </Flex>
     </Box>

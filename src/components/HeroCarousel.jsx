@@ -9,7 +9,7 @@ const HeroCarousel = () => {
   const cards = [<KitchenCard />, <ClothingCard />];
 
   return (
-    <Box w="100%" h="40rem" position="relative" mb='3rem'>
+    <Box as='section' w="100%" h="40rem" position="relative" mb='3rem'>
       {cards.map((card, index) => (
         <Box
           key={index}

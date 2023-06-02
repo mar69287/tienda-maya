@@ -4,7 +4,7 @@ import about2 from '../assets/about2.png';
 
 const AboutCard = () => {
   return (
-    <Stack direction={['column', 'column', 'row']} w='100%' p={['3rem 1.4rem', '4rem 3.5rem']} bg="rgb(233, 227, 224)" spacing={{ base: 0, md: 3, lg: 10 }}>
+    <Stack as='section' direction={['column', 'column', 'row']} w='100%' p={['3rem 1.4rem', '4rem 3.5rem']} bg="rgb(233, 227, 224)" spacing={{ base: 0, md: 3, lg: 10 }}>
       <VStack justifyContent='center' alignItems='center' mb={{ base: '2rem', md: '0' }} w={['100%', '100%', '50%']}>
         <Box w={['90%', '80%']}>
           <Heading marginBottom='1.5rem' textAlign='center'>Journey to the Heart of Mayan Artistry</Heading>

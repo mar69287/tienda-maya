@@ -6,7 +6,7 @@ import { HiHome } from 'react-icons/hi';
 
 const BenefitsGrid = () => {
   return (
-    <Grid templateColumns={{ xl: 'repeat(3, 1fr)', '2xl': 'repeat(6, 1fr)', }} m='0px auto 3rem auto' width={{ xl: '100%', '2xl': '1400px' }}>
+    <Grid as='section' templateColumns={{ xl: 'repeat(3, 1fr)', '2xl': 'repeat(6, 1fr)', }} m='0px auto 3rem auto' width={{ xl: '100%', '2xl': '1400px' }}>
       <GridItem colSpan={{ xl: 2, '2xl': 2 }}>
         <Box p={6} border="1px solid" borderColor="black">
           <VStack>

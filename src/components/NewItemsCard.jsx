@@ -1,6 +1,7 @@
 import { Box, Heading, Image, SimpleGrid, Text, VStack, Stack } from '@chakra-ui/react';
 import React from 'react'
 import { Link } from 'react-router-dom';
+import ProductCard from './ProductCard';
 
 const NewItemsCard = ({ products }) => {
   const newProducts = products.slice(-4);
@@ -8,7 +9,7 @@ const NewItemsCard = ({ products }) => {
   return (
     <>
         <Stack width={{ xl: '100%', '2xl': '1400px' }} m='0px auto 0px auto'>
-            <Box _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }}>
+            <Box width={'8.5rem'} _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }}>
                 <Link to='/products'>
                     <Text fontSize={'1.2rem'} fontWeight={'bold'}>
                         Shop All Items
@@ -22,21 +23,7 @@ const NewItemsCard = ({ products }) => {
             </Heading>
             <SimpleGrid columns={4} spacing={6} w={'100%'}>
                 {newProducts.map(product => 
-                    <Box key={product.id} width='100%'>
-                        <Image
-                            w={'100%'} 
-                            h={'20rem'}
-                            objectFit={'cover'}
-                            src={product.image}
-                            mb={'1rem'}
-                        />
-                        <Heading as="h3" size="sm" textAlign={'center'}>
-                            {product.title}
-                        </Heading>
-                        <Text textAlign={'center'}>
-                            ${product.price}
-                        </Text>
-                    </Box>
+                    <ProductCard key={product.id} product={product} />
                 )}
             </SimpleGrid >
         </VStack>

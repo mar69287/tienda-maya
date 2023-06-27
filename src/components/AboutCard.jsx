@@ -12,8 +12,8 @@ const AboutCard = () => {
         </Box>
       </VStack>
       <HStack w={['100%', '100%', '50%']} spacing={5} justifyContent={'center'}>
-        <Img src={about1} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} />
-        <Img src={about2} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} />
+        <Img src={about1} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
+        <Img src={about2} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
       </HStack>
     </Stack>
   );

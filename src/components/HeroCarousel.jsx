@@ -1,4 +1,4 @@
-import { Box, Flex, IconButton } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import KitchenCard from './KitchenCard';
 import ClothingCard from './ClothingCard';

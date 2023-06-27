@@ -1,11 +1,21 @@
+import { useEffect, useState } from "react";
+import { getProducts, getCategory, searchProducts } from "../../utilities/products-api";
 import AboutCard from '../../components/AboutCard';
 import BenefitsGrid from '../../components/BenefitsGrid';
-import ClothingCard from '../../components/ClothingCard';
 import Footer from '../../components/Footer';
 import HeroCarousel from '../../components/HeroCarousel';
-import KitchenCard from '../../components/KitchenCard';
 
 const HomePage = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+      async function getAll() {
+          const products = await getProducts()
+          setProducts(products)
+      }
+      getAll()
+  }, [])
+
   return (
     <>
       <HeroCarousel />

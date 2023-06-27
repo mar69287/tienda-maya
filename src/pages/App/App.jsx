@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage';
 import NonUserNavBar from '../../components/NavBar/NonUserNavBar';
+import ProductsPage from '../ProductsPage/ProductsPage';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -24,6 +25,7 @@ export default function App() {
       <NonUserNavBar />
       <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
       </Routes>
     </main>
   );

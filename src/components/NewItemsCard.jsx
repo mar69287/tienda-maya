@@ -21,7 +21,7 @@ const NewItemsCard = ({ products }) => {
             <Heading as="h2" size="lg" mb={4} textAlign={'center'} mt={'0rem'}>
                 New Items
             </Heading>
-            <SimpleGrid columns={4} spacing={6} w={'100%'}>
+            <SimpleGrid  columns={[1, 2, 2, 4]} spacing={6} w={'100%'}>
                 {newProducts.map(product => 
                     <ProductCard key={product.id} product={product} />
                 )}

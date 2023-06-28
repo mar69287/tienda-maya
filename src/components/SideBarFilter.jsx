@@ -28,6 +28,9 @@ const SideBarFilter = ({ onPriceRangeChange }) => {
           <Button paddingX={'2rem'} type="submit" colorScheme="teal">Apply</Button>
         </Flex>
       </form>
+      <Link to={`/products`} >
+        <Text _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }} paddingLeft={'.4rem'}>View All</Text>
+      </Link>
     </VStack>
   )
 }

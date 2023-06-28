@@ -5,6 +5,7 @@ import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage';
 import NonUserNavBar from '../../components/NavBar/NonUserNavBar';
 import ProductsPage from '../ProductsPage/ProductsPage';
+import CategoryPage from '../CategoryPage/CategoryPage';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -26,6 +27,7 @@ export default function App() {
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:category" element={<CategoryPage />} />
       </Routes>
     </main>
   );

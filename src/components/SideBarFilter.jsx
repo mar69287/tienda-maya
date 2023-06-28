@@ -20,7 +20,7 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
     <VStack align='start' spacing={4} py={6}>
       <Heading as="h3" size="md">Categories</Heading>
       {categories.map(category => (
-        <Link key={category} to={`/products/${category}`} onClick={handleLinkClick} >
+        <Link key={category} to={`/products/category/${category}`} onClick={handleLinkClick} >
           <Text _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }} paddingLeft={'.4rem'}>{category}</Text>
         </Link>
       ))}

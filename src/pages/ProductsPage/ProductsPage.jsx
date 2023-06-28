@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts, getCategory, searchProducts } from "../../utilities/products-api";
+import { getProducts } from "../../utilities/products-api";
 import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import ProductCard from '../../components/ProductCard';
 import SideBarFilter from "../../components/SideBarFilter";

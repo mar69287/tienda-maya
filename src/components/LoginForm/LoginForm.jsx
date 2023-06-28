@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
+import { FormControl, FormLabel, Input, Button, Text, VStack, Heading, Stack } from "@chakra-ui/react";
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -7,6 +9,7 @@ export default function LoginForm({ setUser }) {
     password: ''
   });
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -14,31 +17,33 @@ export default function LoginForm({ setUser }) {
   }
 
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
+      navigate('/'); 
     } catch {
       setError('Log In Failed - Try Again');
     }
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
-    </div>
+    <Stack width={{ base: "100%", md: "50%" }} m="auto">
+      <VStack spacing={4}>
+        <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>Login</Heading>
+        <FormControl id="email" isRequired>
+          <FormLabel>Email</FormLabel>
+          <Input type="email" name="email" value={credentials.email} onChange={handleChange} required />
+        </FormControl>
+        <FormControl id="password" isRequired>
+          <FormLabel>Password</FormLabel>
+          <Input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+        </FormControl>
+        <Button background={'rgb(230, 137, 50)'} color={'white'} type="submit" onClick={handleSubmit}>
+          Continue
+        </Button>
+        {error && <Text color="red.500">{error}</Text>}
+      </VStack>
+    </Stack>
   );
 }

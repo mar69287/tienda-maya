@@ -1,12 +1,33 @@
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
 import LoginForm from '../../components/LoginForm/LoginForm'
+import { Box, Flex, HStack, Text, VStack } from '@chakra-ui/react';
+import { useState } from 'react';
 
 export default function AuthPage({ setUser }) {
+    const [showLogin, setShowLogin] = useState(true);
     return (
-        <main>
-            <h1>AuthPage</h1>
-            <SignUpForm setUser={setUser} />
-            <LoginForm setUser={setUser} />
-        </main>
+        <Box height="100vh" display="flex" alignItems="center">
+            <Flex alignItems="center" direction="column" justifyContent="center" width="100%">
+                {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+                <HStack>
+                    {showLogin ? (
+                    <>
+                        <VStack>
+                        <HStack paddingTop={4}>
+                            <Text>New to Tienda Maya?{' '}</Text>
+                            <Text as={'b'} _hover={{ color: 'rgb(230, 137, 50)' }} cursor={'pointer'} onClick={() => setShowLogin(false)}>Create your account</Text>
+                        </HStack>
+                        <Text>(Demo: email: user@user.com password: user)</Text>
+                        </VStack>
+                    </>
+                    ) : (
+                    <HStack>
+                        <Text>Already have an account?{' '}</Text>
+                        <Text as={'b'} _hover={{ color: 'rgb(230, 137, 50)' }} cursor={'pointer'} onClick={() => setShowLogin(true)}>Log in</Text>
+                    </HStack>
+                    )}
+                </HStack>
+            </Flex>
+        </ Box>
     )
 }

@@ -9,6 +9,7 @@ import CategoryPage from '../CategoryPage/CategoryPage';
 import AuthPage from '../AuthPage/AuthPage'
 import UserNavBar from '../../components/NavBar/UserNavBar';
 import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
+import Footer from '../../components/Footer';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/products/category/:category" element={<CategoryPage />} />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
       </Routes>
+      <Footer />
     </main>
   );
 }

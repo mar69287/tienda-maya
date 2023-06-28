@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getProducts, getCategory, searchProducts } from "../../utilities/products-api";
 import AboutCard from '../../components/AboutCard';
 import BenefitsGrid from '../../components/BenefitsGrid';
-import Footer from '../../components/Footer';
 import HeroCarousel from '../../components/HeroCarousel';
 import NewItemsCard from "../../components/NewItemsCard";
 
@@ -23,7 +22,6 @@ const HomePage = () => {
       <NewItemsCard products={products} />
       <BenefitsGrid />
       <AboutCard />
-      <Footer />
     </>
   );
 };

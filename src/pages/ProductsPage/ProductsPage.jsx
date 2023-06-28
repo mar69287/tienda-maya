@@ -39,7 +39,7 @@ const ProductsPage = () => {
   return (
     <Grid as='section' templateColumns={{ md: 'repeat(6, 1fr)', }} m='1rem auto 3rem auto' width={{ xl: '100%', '2xl': '1400px' }}>
         <GridItem colSpan={{ md: 2}} h={'100%'} borderRight={'1px black solid'} paddingRight={'3rem'}>
-            <SideBarFilter onPriceRangeChange={handlePriceRangeChange} />
+            <SideBarFilter onPriceRangeChange={handlePriceRangeChange} setFilteredProducts={setFilteredProducts} products={products} />
         </GridItem>
         <GridItem colSpan={{ md: 4}} paddingLeft={'3rem'}>
             <SimpleGrid  columns={[1, 2, 3]} spacing={6} w={'100%'}>

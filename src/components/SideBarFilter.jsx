@@ -1,7 +1,7 @@
 import { VStack, Heading, Text, Input, Button, Flex } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 
-const SideBarFilter = ({ onPriceRangeChange }) => {
+const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) => {
   const categories = ["Kitchen", "Clothing"];
 
   const handleFormSubmit = (event) => {
@@ -12,11 +12,15 @@ const SideBarFilter = ({ onPriceRangeChange }) => {
     onPriceRangeChange(min, max);
   };
 
+  const handleLinkClick = () => {
+    setFilteredProducts(products); // Reset filtered products to all products
+  };
+
   return (
     <VStack align='start' spacing={4} py={6}>
       <Heading as="h3" size="md">Categories</Heading>
       {categories.map(category => (
-        <Link key={category} to={`/products/${category}`} >
+        <Link key={category} to={`/products/${category}`} onClick={handleLinkClick} >
           <Text _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }} paddingLeft={'.4rem'}>{category}</Text>
         </Link>
       ))}
@@ -28,7 +32,7 @@ const SideBarFilter = ({ onPriceRangeChange }) => {
           <Button paddingX={'2rem'} type="submit" colorScheme="teal">Apply</Button>
         </Flex>
       </form>
-      <Link to={`/products`} >
+      <Link to={`/products`} onClick={handleLinkClick}>
         <Text _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }} paddingLeft={'.4rem'}>View All</Text>
       </Link>
     </VStack>

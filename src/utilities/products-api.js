@@ -13,6 +13,6 @@ export async function searchProducts(searchText) {
     return sendRequest(`${BASE_URL}/search/${searchText}`)
 }
 
-export async function getProduct(id) {
-    return sendRequest(`${BASE_URL}/${id}`)
+export async function getProduct(title) {
+    return sendRequest(`${BASE_URL}/${title}`)
 }

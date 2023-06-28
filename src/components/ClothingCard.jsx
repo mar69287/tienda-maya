@@ -1,5 +1,6 @@
 import { Box, Button, Heading, Img, Text, Stack } from "@chakra-ui/react"
 import ClothingImage from '../assets/ClothingImage.jpeg'
+import { Link } from 'react-router-dom';
 
 const ClothingCard = () => {
   return (
@@ -26,9 +27,11 @@ const ClothingCard = () => {
           <Text fontSize='xl'>
             Discover the essence of Mayan heritage through our curated selection of handmade clothing
           </Text>
-          <Button bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' borderRadius='full'>
-            SHOP MAYAN CLOTHING
-          </Button>
+          <Link to={`/products/category/Clothing`}>
+            <Button bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' borderRadius='full'>
+              SHOP MAYAN CLOTHING
+            </Button>
+          </Link>
         </Stack>
       </Box>
   )

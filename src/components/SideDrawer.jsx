@@ -11,6 +11,9 @@ const SideDrawer = ({ isOpen, onClose, handleUser,}) => {
         <DrawerBody>
           <Stack spacing={'20px'}>
             <Box _hover={{ cursor: 'pointer', color: 'gray.500', transition: 'color 0.2s ease-in-out' }}>
+              <Link to='/products'>Products</Link>
+            </Box>
+            <Box _hover={{ cursor: 'pointer', color: 'gray.500', transition: 'color 0.2s ease-in-out' }}>
               <Link to='/orders'>Order History</Link>
             </Box>
             <Box _hover={{ cursor: 'pointer', color: 'gray.500', transition: 'color 0.2s ease-in-out' }}>

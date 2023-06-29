@@ -12,11 +12,13 @@ import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
 import Footer from '../../components/Footer';
 import CartPage from '../CartPage/CartPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import { Navigate } from 'react-router-dom';
+
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
   const [cart, setCart] = useState([]);
-  const [countCart, setCountCart] = useState(0)
+  const [countCart, setCountCart] = useState(0);
 
   return (
     <main className="App">
@@ -27,7 +29,14 @@ export default function App() {
           <Route path="/products/:productId" element={<ProductDetailPage cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
           <Route path="/products/category/:category" element={<CategoryPage />} />
           <Route path="/cart" element={<CartPage user={user} cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
+          <Route path="/orders" element={
+              user ? (
+                <OrderHistoryPage />
+              ) : (
+                <Navigate replace to="/" />
+              )
+            }
+          />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
       </Routes>
       <Footer />

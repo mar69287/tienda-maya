@@ -3,9 +3,9 @@ import { Box, Center, Divider, Text } from '@chakra-ui/react';
 const Footer = () => {
   return (
     <>
-      <Divider/>
-      <Box as='section'  py={4}>
-        <Center>
+      <Box as='footer'>
+        <Divider/>
+        <Center py={5}>
           <Text color="black" fontSize="sm" fontWeight="bold">
             © 2023 Tienda Maya
           </Text>

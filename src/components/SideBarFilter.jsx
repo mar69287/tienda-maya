@@ -8,12 +8,11 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
     event.preventDefault();
     const min = parseInt(event.target.elements.min.value);
     const max = parseInt(event.target.elements.max.value);
-    // console.log(min,max)
     onPriceRangeChange(min, max);
   };
 
   const handleLinkClick = () => {
-    setFilteredProducts(products); // Reset filtered products to all products
+    setFilteredProducts(products);
   };
 
   return (

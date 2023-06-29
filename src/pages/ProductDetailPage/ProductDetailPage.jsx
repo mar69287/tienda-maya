@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import { getProduct } from "../../utilities/products-api";
-import { Box, SimpleGrid, Image, Heading, Text, VStack, Button, HStack, Spinner } from "@chakra-ui/react";
+import { Box, SimpleGrid, Image, Heading, Text, VStack, Button, HStack, Spinner, useToast } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 const ProductDetailPage = ({ cart, setCart, setCountCart }) => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    const toast = useToast();
 
     useEffect(() => {
         let totalQuantity = 0;
@@ -59,9 +61,15 @@ const ProductDetailPage = ({ cart, setCart, setCountCart }) => {
         } else {
           setCart((prevCart) => [...prevCart, cartItem]);
         }
+
+        toast({
+            title: "Product added to cart",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
       
     };
-
 
   return (
     <SimpleGrid columns={2} spacing={10} width={{ xl: '100%', '2xl': '1400px' }} m='0px auto 0px auto' paddingTop={'3rem'}>
@@ -99,9 +107,14 @@ const ProductDetailPage = ({ cart, setCart, setCountCart }) => {
                 <Text>{quantity}</Text>
                 <Button onClick={handleIncreaseQuantity} variant='ghost' borderRadius={0}  _hover={{ bg: 'RGBA(0, 0, 0, 0.24)' }} transition='background-color 0.3s ease'>+</Button>
             </HStack>
-            <Button onClick={addToCart} w={'100%'} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' >
+            <Button mb={2} onClick={addToCart} w={'100%'} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' >
                 ADD TO CART
             </Button>
+            <Link to={`/products`}>
+                <Button  w={'100%'} bg='rgb(227, 130, 52)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' >
+                    GO BACK
+                </Button>
+            </Link>
         </Box>
     </SimpleGrid>
   )

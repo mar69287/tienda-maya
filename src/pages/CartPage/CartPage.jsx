@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Button, HStack, Spacer } from '@chakra-ui/react'
+import { Box, VStack, Text, Button, HStack, Spacer, useToast } from '@chakra-ui/react'
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../utilities/orders-api";
@@ -7,6 +7,7 @@ import StripeCheckout from "react-stripe-checkout";
 
 const CartPage = ({ user, cart, setCart, setCountCart }) => {
     const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const toast = useToast();
 
     useEffect(() => {
         let totalQuantity = 0;
@@ -22,20 +23,20 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
       try {
         await createOrder(cart, total, token);
         setCart([]);
-        // toast({
-        //   title: "Purchase successful",
-        //   status: "success",
-        //   duration: 3000,
-        //   isClosable: true,
-        // });
+        toast({
+          title: "Purchase successful",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
       } catch (error) {
         console.log(error);
-        // toast({
-        //   title: "Error processing purchase",
-        //   status: "error",
-        //   duration: 3000,
-        //   isClosable: true,
-        // });
+        toast({
+          title: "Error processing purchase",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
       }
     };
   return (
@@ -59,16 +60,24 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                       Continue Shopping
                     </Button>
                   </Link>
-                  <StripeCheckout
-                    stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY || ""}
-                    token={handleToken}
-                    currency="USD"
-                    name="Fresh Finds"
-                  >
-                    <Button  colorScheme="blue" size="md" >
-                      Purchase
-                    </Button>
-                  </StripeCheckout>
+                  {!user ? (
+                    <Link to="/auth">
+                      <Button colorScheme="blue" size="md">
+                        Log in to Purchase
+                      </Button>
+                    </Link>
+                  ) : (
+                    <StripeCheckout
+                      stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY || ""}
+                      token={handleToken}
+                      currency="USD"
+                      name="Tienda Maya"
+                    >
+                      <Button colorScheme="blue" size="md">
+                        Purchase
+                      </Button>
+                    </StripeCheckout>
+                  )}
                 </HStack>
                 <Text>
                   (Demo Card Number: 4242 4242 4242 4242 exp: 12/34 CVC: 123)

@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Button, HStack, Spacer, useToast } from '@chakra-ui/react'
+import { Box, VStack, Text, Button, HStack, Spacer, useToast, Stack } from '@chakra-ui/react'
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../utilities/orders-api";
@@ -53,7 +53,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                     Total: ${total.toFixed(2)}
                   </Text>
                 </HStack>
-                <HStack w="100%" paddingBottom={"4"}>
+                <Stack direction={{base: 'column', md: 'row'}} spacing={4} w="100%" paddingBottom={4} align={'flex-end'}>
                   <Spacer />
                   <Link to="/products">
                     <Button colorScheme="gray" size="md">
@@ -78,7 +78,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                       </Button>
                     </StripeCheckout>
                   )}
-                </HStack>
+                </Stack>
                 <Text>
                   (Demo Card Number: 4242 4242 4242 4242 exp: 12/34 CVC: 123)
                 </Text>

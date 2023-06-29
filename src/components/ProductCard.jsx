@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   return (
     <Link to={`/products/${product.title}`}>
       <Box
-        width="100%"
+        width={"100%"}
         transition="border-color 0.3s ease"
         _hover={{ borderColor: 'rgb(255, 160, 76)' }}
         border="1px solid transparent"

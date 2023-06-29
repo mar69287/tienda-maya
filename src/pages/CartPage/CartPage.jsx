@@ -1,6 +1,7 @@
 import { Box, VStack, Text, Button, HStack, Spacer } from '@chakra-ui/react'
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { createOrder } from "../../utilities/orders-api";
 import CartItemCard from '../../components/CartItemCard';
 import StripeCheckout from "react-stripe-checkout";
 
@@ -16,7 +17,27 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
       
         setCountCart(totalQuantity);
     }, [cart]);
-
+    
+    const handleToken = async (token) => {
+      try {
+        await createOrder(cart, total, token);
+        setCart([]);
+        // toast({
+        //   title: "Purchase successful",
+        //   status: "success",
+        //   duration: 3000,
+        //   isClosable: true,
+        // });
+      } catch (error) {
+        console.log(error);
+        // toast({
+        //   title: "Error processing purchase",
+        //   status: "error",
+        //   duration: 3000,
+        //   isClosable: true,
+        // });
+      }
+    };
   return (
     <Box m='1rem auto 3rem auto' width={{ xl: '100%', '2xl': '1400px' }}>
         {cart.length > 0 ? ( 
@@ -38,7 +59,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                       Continue Shopping
                     </Button>
                   </Link>
-                  {/* <StripeCheckout
+                  <StripeCheckout
                     stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY || ""}
                     token={handleToken}
                     currency="USD"
@@ -47,7 +68,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                     <Button  colorScheme="blue" size="md" >
                       Purchase
                     </Button>
-                  </StripeCheckout> */}
+                  </StripeCheckout>
                 </HStack>
                 <Text>
                   (Demo Card Number: 4242 4242 4242 4242 exp: 12/34 CVC: 123)

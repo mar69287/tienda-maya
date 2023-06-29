@@ -38,6 +38,7 @@ export default function App() {
             }
           />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
       <Footer />
     </main>

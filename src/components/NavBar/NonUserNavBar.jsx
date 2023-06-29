@@ -38,9 +38,11 @@ const NonUserNavBar = () => {
                             </Hide>
                         </HStack>
                     </Link>
-                    <Box borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
-                        <FiShoppingCart size={iconSize} />
-                    </Box>
+                    <Link to='/cart'>
+                        <Box borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
+                            <FiShoppingCart size={iconSize} />
+                        </Box>
+                    </Link>
                 </HStack>
             </HStack>
         </Box>

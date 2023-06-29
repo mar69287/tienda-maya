@@ -10,6 +10,7 @@ import AuthPage from '../AuthPage/AuthPage'
 import UserNavBar from '../../components/NavBar/UserNavBar';
 import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
 import Footer from '../../components/Footer';
+import CartPage from '../CartPage/CartPage';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:productId" element={<ProductDetailPage />} />
           <Route path="/products/category/:category" element={<CategoryPage />} />
+          <Route path="/cart" element={<CartPage setUser={setUser} />} />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
       </Routes>
       <Footer />

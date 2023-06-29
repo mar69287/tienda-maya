@@ -37,7 +37,7 @@ const ProductDetailPage = () => {
         <Box width='100%' paddingTop={'2rem'}>
           <Image
               w={'100%'}
-              h={'35rem'}
+              h={'38rem'}
               objectFit={'center'}
               src={product.image}
               mb={'1rem'}

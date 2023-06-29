@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:productId" element={<ProductDetailPage cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
           <Route path="/products/category/:category" element={<CategoryPage />} />
-          <Route path="/cart" element={<CartPage user={user} cart={cart} setCart={setCart} />} />
+          <Route path="/cart" element={<CartPage user={user} cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
       </Routes>
       <Footer />

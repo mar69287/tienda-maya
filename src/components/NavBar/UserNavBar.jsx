@@ -6,10 +6,12 @@ import {  FiShoppingCart } from 'react-icons/fi';
 import {  BiUserCircle } from 'react-icons/bi';
 import {  RxHamburgerMenu } from 'react-icons/rx';
 import SearchInput from '../SearchInput';
-
+import { useState } from 'react'
+import SideDrawer from '../SideDrawer';
 
 export default function UserNavBar({ user, setUser, countCart }) {
     const iconSize = useBreakpointValue({ base: 25, md: 26, lg: 27 });
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     function handleLogOut() {
         userService.logOut()
@@ -37,14 +39,19 @@ export default function UserNavBar({ user, setUser, countCart }) {
                     <SearchInput />
                 </Hide>
                 <HStack spacing={{ base: 0, md: 3, lg: 5 }}>
-                    <Link to='' onClick={handleLogOut}>
+                    {/* <Link to='' onClick={handleLogOut}> */}
                         <HStack borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.2s ease-in-out' }}>
-                            <BiUserCircle size={iconSize} />
-                            <Hide below='sm'>
+                            <BiUserCircle size={iconSize} onClick={() => setIsDrawerOpen(true)}/>
+                            {/* <Hide below='sm'>
                                 <Text>Log Out</Text>
-                            </Hide>
+                            </Hide> */}
+                            <SideDrawer 
+                                isOpen={isDrawerOpen}
+                                onClose={() => setIsDrawerOpen(false)}
+                                handleUser={handleLogOut}
+                            />
                         </HStack>
-                    </Link>
+                    {/* </Link> */}
                     <Link to='/cart'>
                         <Box position="relative" borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
                             <Badge colorScheme="red" borderRadius="full" position="absolute" top="-10px" right="-12px" fontSize="sm" px={2}>

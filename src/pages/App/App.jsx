@@ -14,6 +14,8 @@ import CartPage from '../CartPage/CartPage';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
+  const [cart, setCart] = useState([]);
+  const [countCart, setCountCart] = useState(0)
 
   return (
     <main className="App">
@@ -21,9 +23,9 @@ export default function App() {
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:productId" element={<ProductDetailPage />} />
+          <Route path="/products/:productId" element={<ProductDetailPage cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
           <Route path="/products/category/:category" element={<CategoryPage />} />
-          <Route path="/cart" element={<CartPage setUser={setUser} />} />
+          <Route path="/cart" element={<CartPage user={user} cart={cart} setCart={setCart} />} />
           <Route path="/auth" element={<AuthPage setUser={setUser} />} />
       </Routes>
       <Footer />

@@ -37,7 +37,7 @@ export default function SignUpForm({ setUser }) {
 
   return (
     <Stack width={{ base: "100%", md: "50%" }} m="auto">
-      <Box p={8}>
+      <Box>
         <Stack spacing={4}>
           <Heading textAlign={'center'} fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>Sign Up</Heading>
           <FormControl id="name" isRequired>

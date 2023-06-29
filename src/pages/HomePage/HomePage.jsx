@@ -18,10 +18,10 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <HeroCarousel /> */}
+      <HeroCarousel />
       <NewItemsCard products={products} />
-      {/* <BenefitsGrid /> */}
-      {/* <AboutCard /> */}
+      <BenefitsGrid />
+      <AboutCard />
     </>
   );
 };

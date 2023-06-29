@@ -1,6 +1,8 @@
-import { Heading, Img, Stack, VStack, Text, Box, HStack, Button } from '@chakra-ui/react';
+import { Heading, Img, Stack, VStack, Text, Box, HStack, Show } from '@chakra-ui/react';
 import about1 from '../assets/about1.png';
 import about2 from '../assets/about2.png';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const AboutCard = () => {
   return (
@@ -11,10 +13,18 @@ const AboutCard = () => {
           <Text textAlign='center'>With deep roots in tradition, every piece we offer is meticulously crafted using centuries-old techniques passed down from mothers to daughters for generations. By celebrating their remarkable craftsmanship, Tienda Maya becomes a bridge between cultures, honoring Guatemala's vibrant heritage and the enduring spirit of the Mayan people.</Text>
         </Box>
       </VStack>
-      <HStack w={['100%', '100%', '50%']} spacing={5} justifyContent={'center'}>
-        <Img src={about1} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
-        <Img src={about2} w={['45%', '45%', '42%', '38%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
-      </HStack>
+      <Show above='sm'>
+        <HStack w={['100%', '100%', '50%']} spacing={5} justifyContent={'center'}>
+          <Img src={about1} w={['45%', '50%', '50%', '43%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
+          <Img src={about2} w={['45%', '50%', '50%', '43%']} h={['20rem', '20rem', '22rem', '30rem']} objectFit={'cover'} />
+        </HStack>
+      </Show>
+      <Show below='sm'>
+        <Carousel infiniteLoop showArrows={false} autoPlay={true} interval={5000} showStatus={false}>
+          <Img src={about1} h={'20rem'} objectFit={'cover'} />
+          <Img src={about2}  h={'20rem'} objectFit={'cover'} />
+        </Carousel>
+      </Show>
     </Stack>
   );
 };

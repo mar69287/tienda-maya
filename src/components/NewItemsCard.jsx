@@ -7,7 +7,7 @@ const NewItemsCard = ({ products }) => {
   const newProducts = products.slice(-4);
 
   return (
-        <Box width={{ sm: '100%', '2xl': '1400px' }} m='0px auto 0px auto' px={3}>
+        <Box width={{ sm: '100%', '2xl': '1400px' }} m='0px auto 3rem auto' px={3}>
             <Stack >
                 <Box width={'8.5rem'} _hover={{ cursor: 'pointer', color: 'rgb(255, 160, 76)', transition: 'color 0.2s ease-in-out' }}>
                     <Link to='/products'>

@@ -1,4 +1,4 @@
-import { HStack, Image, Box, useBreakpointValue, Text, Heading, Hide } from '@chakra-ui/react'
+import { HStack, Image, Box, useBreakpointValue, Text, Heading, Hide, Badge } from '@chakra-ui/react'
 import logo from '../../assets/tienda-image.png'
 import {  FiShoppingCart } from 'react-icons/fi';
 import {  BiUserCircle } from 'react-icons/bi';
@@ -6,7 +6,7 @@ import {  RxHamburgerMenu } from 'react-icons/rx';
 import SearchInput from '../SearchInput';
 import { Link } from 'react-router-dom';
 
-const NonUserNavBar = () => {
+const NonUserNavBar = ({ countCart }) => {
     const iconSize = useBreakpointValue({ base: 25, md: 26, lg: 27 });
 
   return (
@@ -39,7 +39,10 @@ const NonUserNavBar = () => {
                         </HStack>
                     </Link>
                     <Link to='/cart'>
-                        <Box borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
+                        <Box position="relative" borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
+                            <Badge colorScheme="red" borderRadius="full" position="absolute" top="-10px" right="-12px" fontSize="sm" px={2}>
+                                {countCart}
+                            </Badge>
                             <FiShoppingCart size={iconSize} />
                         </Box>
                     </Link>

@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <main className="App">
-      {user ? <UserNavBar user={user} setUser={setUser} /> : <NonUserNavBar />}
+      {user ? <UserNavBar user={user} setUser={setUser} countCart={countCart} /> : <NonUserNavBar countCart={countCart} />}
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />

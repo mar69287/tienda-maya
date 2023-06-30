@@ -51,7 +51,7 @@ const OrderHistoryPage = () => {
         <Thead>
           <Tr>
             <Th>Ordered On</Th>
-            <Th>Id</Th>
+            <Th>Confirmation #</Th>
             <Th>Total</Th>
           </Tr>
         </Thead>

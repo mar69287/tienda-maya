@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Text, Flex, Image } from '@chakra-ui/react';
+import { Box, Heading, Button, Text, Flex, Image, Center, Icon } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ const NewItemsCard = ({ products }) => {
         <Box width={{ sm: '100%', '2xl': '1400px' }} m='0px auto 3rem auto' px={3}>
             <Flex justify={'flex-end'}>
                 <Link to='/products'>
-                <Button
+                {/* <Button
                 rightIcon={<ArrowForwardIcon />}
                 border='2px solid rgb(255, 160, 76)'
                 _hover={{ bg: 'rgb(255, 160, 76)', color: 'white' }}
@@ -19,7 +19,11 @@ const NewItemsCard = ({ products }) => {
                 borderRadius={0}
                 >
                     Shop All
-                </Button>
+                </Button> */}
+                <Flex align={'center'} className='button style1'>
+                    <Text>Shop All</Text>
+                    <ArrowForwardIcon ml={2}/>
+                </Flex>
                 </Link>
             </Flex>
             <Heading as="h2" size="lg" mb={4} textAlign={'center'} mt={'0rem'}> 

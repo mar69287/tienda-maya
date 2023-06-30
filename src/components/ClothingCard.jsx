@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Img, Text, Stack } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Img, Text, Stack } from "@chakra-ui/react"
 import ClothingImage from '../assets/ClothingImage.jpeg'
 import { Link } from 'react-router-dom';
 import NonUserNavBar from "./NavBar/NonUserNavBar";
@@ -29,9 +29,12 @@ const ClothingCard = () => {
             Discover the essence of Mayan heritage through our curated selection of handmade clothing
           </Text>
           <Link to={`/products/category/Clothing`}>
-          <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
+            {/* <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
               SHOP MAYAN CLOTHING
-            </Button>
+            </Button> */}
+            <Flex align={'center'} className='button_slide slide_right'>
+                <Text>Shop Mayan Clothing</Text>
+            </Flex>
           </Link>
         </Stack>
       </Box>

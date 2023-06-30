@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Img, Text, Stack } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Img, Text, Stack } from "@chakra-ui/react"
 import kitchen from '../assets/tienda-kitchen.png'
 import { Link } from 'react-router-dom';
 
@@ -28,9 +28,12 @@ const KitchenImage = () => {
             A curation of handcrafted home and kitchen items emblematic of Guatemalan traditions & culture
           </Text>
           <Link to={`/products/category/Kitchen`}>
-            <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
+            {/* <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
               SHOP CASA Y COCINA
-            </Button>
+            </Button> */}
+            <Flex align={'center'} className='button_slide slide_right'>
+                <Text>Shop Kitchen Essentials</Text>
+            </Flex>
           </Link>
         </Stack>
       </Box>

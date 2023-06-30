@@ -3,7 +3,8 @@ const Product = require('../../models/product')
 module.exports = {
     index,
     getCategory,
-    show
+    show,
+    getSearch
 }
 
 async function index(req, res) {
@@ -36,4 +37,27 @@ async function show(req, res) {
   // }
   // const product = await Product.findOne({id: productId});
   // res.json(product);
+}
+
+async function getSearch(req, res) {
+  console.log('hello')
+  const search = req.params.searchText;
+  const regex = new RegExp(search, 'i'); // case-insensitive regex
+  try {
+    let products;
+    if (search === '') {
+      products = await Product.find();
+    } else {
+      products = await Product.find({
+        $or: [
+          { title: { $regex: regex } },
+          { category: { $regex: regex } }
+        ]
+      });
+    }
+    res.json(products);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
 }

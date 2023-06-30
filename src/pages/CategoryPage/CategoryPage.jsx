@@ -29,7 +29,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     if (priceRange.min === '' && priceRange.max === '') {
-      setFilteredProducts(products); // Reset filteredProducts to all products
+      setFilteredProducts(products); 
     } else {
       const filtered = products.filter(product => (
         product.price >= priceRange.min && product.price <= priceRange.max

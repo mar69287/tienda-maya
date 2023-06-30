@@ -32,7 +32,7 @@ export default function UserNavBar({ user, setUser, countCart, setSearchText }) 
                             <Image src={logo} w={{ base: '80px', md: '90px', lg: '100px' }} h="70px" objectFit="cover" _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}/>
                         </Link>
                         <Hide below='md'>
-                            <Heading as='h1' fontSize={{ base: '1.2rem', md: '1.5rem', lg: '1.7rem' }}>Tienda Maya</Heading>
+                            <Heading fontFamily={'Bebas Neue, sans-serif'} as='h1' fontSize={{ base: '1.2rem', md: '1.5rem', lg: '1.7rem' }}>Tienda Maya</Heading>
                         </Hide>
                     </HStack>
                 <Hide below='sm'>

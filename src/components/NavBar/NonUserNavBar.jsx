@@ -13,11 +13,11 @@ const NonUserNavBar = ({ countCart }) => {
     <>
         <Box>
             <HStack width={{xl: '100%', '2xl': '1400px'}} m='0px auto' justifyContent={'space-between'} p='0 1.2rem'>
-                <Hide above='sm'>
+                {/* <Hide above='sm'>
                     <HStack borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
                         <RxHamburgerMenu size={iconSize}/>
                     </HStack>
-                </Hide>
+                </Hide> */}
                     <HStack>
                         <Link to='/' >
                             <Image src={logo} w={{ base: '80px', md: '90px', lg: '100px' }} h="70px" objectFit="cover" _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}/>

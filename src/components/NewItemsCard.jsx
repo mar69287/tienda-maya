@@ -1,8 +1,7 @@
-import { Box, Heading, Button, Text, VStack, Stack, Flex, Image, Icon } from '@chakra-ui/react';
+import { Box, Heading, Button, Text, Flex, Image } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { BiSolidRightArrowAlt } from 'react-icons/bi';
 
 const NewItemsCard = ({ products }) => {
   const newProducts = products.slice(-4);

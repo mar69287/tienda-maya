@@ -28,7 +28,7 @@ const KitchenImage = () => {
             A curation of handcrafted home and kitchen items emblematic of Guatemalan traditions & culture
           </Text>
           <Link to={`/products/category/Kitchen`}>
-            <Button bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' borderRadius='full'>
+            <Button bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
               SHOP CASA Y COCINA
             </Button>
           </Link>

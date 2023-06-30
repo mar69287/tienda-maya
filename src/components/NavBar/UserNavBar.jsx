@@ -9,7 +9,7 @@ import SearchInput from '../SearchInput';
 import { useState } from 'react'
 import SideDrawer from '../SideDrawer';
 
-export default function UserNavBar({ user, setUser, countCart, setSearchText }) {
+export default function UserNavBar({ user, setUser, countCart }) {
     const iconSize = useBreakpointValue({ base: 25, md: 26, lg: 27 });
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -36,7 +36,7 @@ export default function UserNavBar({ user, setUser, countCart, setSearchText }) 
                         </Hide>
                     </HStack>
                 <Hide below='sm'>
-                    <SearchInput setSearchText={setSearchText}/>
+                    <SearchInput/>
                 </Hide>
                 <HStack spacing={{ base: 0, md: 3, lg: 5 }}>
                     {/* <Link to='' onClick={handleLogOut}> */}

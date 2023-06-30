@@ -4,7 +4,7 @@ import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import ProductCard from '../../components/ProductCard';
 import SideBarFilter from "../../components/SideBarFilter";
 
-const ProductsPage = ({  searchText }) => {
+const ProductsPage = () => {
     const [products, setProducts] = useState([])
     const [priceRange, setPriceRange] = useState({ min: '', max: '' });
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -17,16 +17,6 @@ const ProductsPage = ({  searchText }) => {
       getAll()
   }, [])
 
-  useEffect(() => {
-    async function search() {
-      if (searchText !== "") {
-        const products = await searchProducts(searchText);
-        setFilteredProducts(products);
-      }
-    }
-    search();
-  }, [searchText]);
-
   const handlePriceRangeChange = (min, max) => {
     const filtered = products.filter(product => (
       product.price >= min && product.price <= max
@@ -37,10 +27,7 @@ const ProductsPage = ({  searchText }) => {
 
   useEffect(() => {
     const filterProducts = async () => {
-      if (searchText !== '') {
-        const products = await searchProducts(searchText);
-        setFilteredProducts(products);
-      } else if (priceRange.min === '' && priceRange.max === '') {
+      if (priceRange.min === '' && priceRange.max === '') {
         setFilteredProducts(products);
       } else {
         const filtered = products.filter(product => (
@@ -51,7 +38,7 @@ const ProductsPage = ({  searchText }) => {
     };
 
     filterProducts();
-  }, [products, priceRange, searchText]);
+  }, [products, priceRange]);
 
   return (
     <Grid as='section' templateColumns={{ md: 'repeat(6, 1fr)', }} m='1rem auto 3rem auto' width={{ xl: '100%', '2xl': '1400px' }}>

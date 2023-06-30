@@ -3,24 +3,18 @@ import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-const SearchInput = ({setSearchText}) => {
+const SearchInput = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
 
   return (
     <form
-      // className="searchInput"
         onSubmit={(event) => {
           event.preventDefault();
-          // navigate("/products");
           if (ref.current) {
-            navigate("/products");
-            setSearchText(ref.current.value);
+            navigate(`/search/${ref.current.value}`);
             ref.current.value = "";
           }
-          //   setSearchText(ref.current.value);
-          // console.log('triggered')
-          // navigate("/products");
         }}
     >
       <InputGroup width={{ base: "100%", md: "20rem", lg: "30rem" }}>

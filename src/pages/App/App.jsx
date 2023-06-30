@@ -13,22 +13,24 @@ import Footer from '../../components/Footer';
 import CartPage from '../CartPage/CartPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import { Navigate } from 'react-router-dom';
+import SearchPage from '../SearchPage/SearchPage';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
   const [cart, setCart] = useState([]);
   const [countCart, setCountCart] = useState(0);
-  const [searchText, setSearchText] = useState("");
+
 
   return (
     <main className="App">
-      {user ? <UserNavBar user={user} setUser={setUser} countCart={countCart} setSearchText={setSearchText} /> : <NonUserNavBar countCart={countCart} />}
+      {user ? <UserNavBar user={user} setUser={setUser} countCart={countCart} /> : <NonUserNavBar countCart={countCart} />}
       <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsPage searchText={searchText} setSearchText={setSearchText} />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:productId" element={<ProductDetailPage cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
           <Route path="/products/category/:category" element={<CategoryPage />} />
           <Route path="/cart" element={<CartPage user={user} cart={cart} setCart={setCart} setCountCart={setCountCart} />} />
+          <Route path="/search/:itemSearch" element={<SearchPage />} />
           <Route path="/orders" element={
               user ? (
                 <OrderHistoryPage />

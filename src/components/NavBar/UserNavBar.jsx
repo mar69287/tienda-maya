@@ -21,7 +21,7 @@ export default function UserNavBar({ user, setUser, countCart }) {
     return (
         <>
         <Box>
-            <HStack width={{xl: '100%', '2xl': '1400px'}} m='0px auto' justifyContent={'space-between'} p='0 1.2rem'>
+            <HStack width={{xl: '100%', '2xl': '1400px'}} m='5px auto' justifyContent={'space-between'} p='0 1.2rem'>
                 {/* <Hide above='sm'>
                     <HStack borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
                         <RxHamburgerMenu size={iconSize}/>
@@ -29,7 +29,7 @@ export default function UserNavBar({ user, setUser, countCart }) {
                 </Hide> */}
                     <HStack>
                         <Link to='/' >
-                            <Image src={logo} w={{ base: '80px', md: '90px', lg: '100px' }} h="70px" objectFit="cover" _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}/>
+                            <Image src={logo} w={{ base: '80px', md: '90px', lg: '100px' }} h="68px" objectFit="cover" _hover={{ cursor: 'pointer', borderBottom: '2px solid black', transition: 'all 0.3s ease-in-out' }} borderBottom={'2px solid transparent'}/>
                         </Link>
                         <Hide below='md'>
                             <Heading fontFamily={'Bebas Neue, sans-serif'} as='h1' fontSize={{ base: '1.2rem', md: '1.5rem', lg: '1.7rem' }}>Tienda Maya</Heading>
@@ -40,7 +40,7 @@ export default function UserNavBar({ user, setUser, countCart }) {
                 </Hide>
                 <HStack spacing={{ base: 0, md: 3, lg: 5 }}>
                     {/* <Link to='' onClick={handleLogOut}> */}
-                        <HStack borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.2s ease-in-out' }}>
+                        <HStack borderBottom={'2px solid transparent'} borderRadius={0} p='.4rem .4rem' _hover={{ cursor: 'pointer', borderBottom: '2px solid black', transition: 'all 0.3s ease-in-out' }}>
                             <BiUserCircle size={iconSize} onClick={() => setIsDrawerOpen(true)}/>
                             {/* <Hide below='sm'>
                                 <Text>Log Out</Text>
@@ -53,11 +53,11 @@ export default function UserNavBar({ user, setUser, countCart }) {
                         </HStack>
                     {/* </Link> */}
                     <Link to='/cart'>
-                        <Box position="relative" borderRadius={3} p='.4rem .4rem' _hover={{ cursor: 'pointer', backgroundColor: 'gray.100', transition: 'background-color 0.3s ease-in-out' }}>
+                        <Box borderBottom={'2px solid transparent'} position="relative" borderRadius={0} p='.4rem .4rem' _hover={{ cursor: 'pointer', borderBottom: '2px solid black', transition: 'all 0.3s ease-in-out' }}>
                             <Badge colorScheme="red" borderRadius="full" position="absolute" top="-10px" right="-12px" fontSize="sm" px={2}>
                                 {countCart}
                             </Badge>
-                            <FiShoppingCart size={iconSize} />
+                            <FiShoppingCart size={iconSize}/>
                         </Box>
                     </Link>
                 </HStack>

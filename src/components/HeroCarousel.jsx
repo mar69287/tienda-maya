@@ -63,7 +63,7 @@ const HeroCarousel = () => {
     //     />
     //   </Flex>
     // </Box>
-    <Carousel emulateTouch infiniteLoop showArrows={false} autoPlay={true} interval={5000} showStatus={false}>
+    <Carousel emulateTouch infiniteLoop showArrows={false} autoPlay interval={5000} showStatus={false}>
       <KitchenCard />
       <ClothingCard />
     </Carousel>

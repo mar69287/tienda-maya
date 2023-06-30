@@ -20,7 +20,7 @@ const AboutCard = () => {
         </HStack>
       </Show>
       <Show below='sm'>
-        <Carousel infiniteLoop showArrows={false} autoPlay={true} interval={5000} showStatus={false}>
+        <Carousel emulateTouch infiniteLoop showArrows={false} autoPlay={true} interval={5000} showStatus={false}>
           <Img src={about1} h={'20rem'} objectFit={'cover'} />
           <Img src={about2}  h={'20rem'} objectFit={'cover'} />
         </Carousel>

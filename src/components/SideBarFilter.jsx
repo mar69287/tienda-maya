@@ -1,4 +1,4 @@
-import { VStack, Heading, Text, Input, Button, Flex, Show, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from "@chakra-ui/react";
+import { VStack, Heading, Text, Input, Button, Flex, Show, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 
 const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) => {
@@ -31,7 +31,8 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
             <Flex>
               <Input type="number" name="min" placeholder="$ Min" marginRight="1rem" />
               <Input type="number" name="max" placeholder="$ Max" marginRight="1rem" />
-              <Button paddingX={'2rem'} type="submit" colorScheme="teal">Apply</Button>
+              {/* <Button paddingX={'2rem'} color={'white'} type="submit" background={'rgb(230, 137, 50)'} transition="background-color 0.3s ease" _hover={{ backgroundColor: 'rgba(204, 115, 18)' }}>Apply</Button> */}
+              <button className="button style1">Apply</button>
             </Flex>
           </form>
           <Link to={`/products`} onClick={handleLinkClick}>

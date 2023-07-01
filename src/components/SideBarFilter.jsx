@@ -31,8 +31,9 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
             <Flex>
               <Input type="number" name="min" placeholder="$ Min" marginRight="1rem" />
               <Input type="number" name="max" placeholder="$ Max" marginRight="1rem" />
-              {/* <Button paddingX={'2rem'} color={'white'} type="submit" background={'rgb(230, 137, 50)'} transition="background-color 0.3s ease" _hover={{ backgroundColor: 'rgba(204, 115, 18)' }}>Apply</Button> */}
-              <button className="button style1">Apply</button>
+              <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' borderRadius={0} border={'1px solid black'}  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
+                  Apply
+              </Button>
             </Flex>
           </form>
           <Link to={`/products`} onClick={handleLinkClick}>
@@ -63,7 +64,9 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
                   <Flex pb={3}>
                     <Input type="number" name="min" placeholder="$ Min" marginRight="1rem" />
                     <Input type="number" name="max" placeholder="$ Max" marginRight="1rem" />
-                    <Button paddingX={'2rem'} type="submit" colorScheme="teal">Apply</Button>
+                    <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' borderRadius={0} border={'1px solid black'}  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
+                        Apply
+                    </Button>
                   </Flex>
                 </form>
                 <Link to={`/products`} onClick={handleLinkClick}>

@@ -109,12 +109,12 @@ const ProductDetailPage = ({ cart, setCart, setCountCart }) => {
                         <Text>{quantity}</Text>
                         <Button onClick={handleIncreaseQuantity} variant='ghost' borderRadius={0}  _hover={{ bg: 'RGBA(0, 0, 0, 0.24)' }} transition='background-color 0.3s ease'>+</Button>
                     </HStack>
-                    <Button mb={2} onClick={addToCart} w={'100%'} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgb(230, 137, 50)' }} transition='background-color 0.3s ease' >
+                    <Button mb={2} bg={'white'} onClick={addToCart} w={'100%'} borderRadius={0} color='black' border={'1px solid black'} _hover={{ bg: 'rgb(5, 94, 152)', color: 'white' }} transition='all 0.3s ease' >
                         ADD TO CART
                     </Button>
                     <Link to={`/products`}>
-                        <Button  w={'100%'} bg='rgb(227, 130, 52)' color='white' variant='outline' _hover={{ bg: 'rgb(250, 127, 70)' }} transition='background-color 0.3s ease' >
-                            GO BACK
+                        <Button w={'100%'} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgba(194, 105, 28)' }} transition='all 0.3s ease' borderRadius='full'>
+                            KEEP SHOPPING
                         </Button>
                     </Link>
                 </Box>

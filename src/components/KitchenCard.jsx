@@ -28,12 +28,9 @@ const KitchenImage = () => {
             A curation of handcrafted home and kitchen items emblematic of Guatemalan traditions & culture
           </Text>
           <Link to={`/products/category/Kitchen`}>
-            {/* <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
-              SHOP CASA Y COCINA
-            </Button> */}
-            <Flex align={'center'} className='button_slide slide_right'>
-                <Text>Shop Kitchen Essentials</Text>
-            </Flex>
+            <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgba(194, 105, 28)' }} transition='all 0.3s ease' borderRadius='full'>
+              SHOP KITCHEN ESSENTIALS
+            </Button>
           </Link>
         </Stack>
       </Box>

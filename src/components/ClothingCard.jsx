@@ -29,12 +29,9 @@ const ClothingCard = () => {
             Discover the essence of Mayan heritage through our curated selection of handmade clothing
           </Text>
           <Link to={`/products/category/Clothing`}>
-            {/* <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'white', color: 'black' }} transition='all 0.3s ease' borderRadius='full'>
+            <Button letterSpacing={1} border={"none"} bg='rgb(255, 160, 76)' color='white' variant='outline' _hover={{ bg: 'rgba(194, 105, 28)' }} transition='all 0.3s ease' borderRadius='full'>
               SHOP MAYAN CLOTHING
-            </Button> */}
-            <Flex align={'center'} className='button_slide slide_right'>
-                <Text>Shop Mayan Clothing</Text>
-            </Flex>
+            </Button>
           </Link>
         </Stack>
       </Box>

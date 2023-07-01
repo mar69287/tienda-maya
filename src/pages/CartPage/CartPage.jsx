@@ -62,7 +62,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                   </Link>
                   {!user ? (
                     <Link to="/auth">
-                      <Button colorScheme="blue" size="md">
+                      <Button borderRadius={0} bg={'rgb(5, 94, 152)'} color={'white'} border={'1px solid black'} _hover={{ bg: '#2A4365' }} size="md">
                         Log in to Purchase
                       </Button>
                     </Link>
@@ -73,7 +73,7 @@ const CartPage = ({ user, cart, setCart, setCountCart }) => {
                       currency="USD"
                       name="Tienda Maya"
                     >
-                      <Button colorScheme="blue" size="md">
+                      <Button borderRadius={0} bg={'rgb(5, 94, 152)'} color={'white'} border={'1px solid black'} _hover={{ bg: '#2A4365' }} size="md">
                         Purchase
                       </Button>
                     </StripeCheckout>

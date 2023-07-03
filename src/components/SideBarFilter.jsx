@@ -2,7 +2,7 @@ import { VStack, Heading, Text, Input, Button, Flex, Show, useDisclosure, Modal,
 import { Link } from 'react-router-dom';
 
 const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) => {
-  const categories = ["Kitchen", "Clothing"];
+  const categories = ["Kitchen", "Clothing", "Accessories"];
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const handleFormSubmit = (event) => {

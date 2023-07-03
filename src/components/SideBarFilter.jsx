@@ -31,7 +31,7 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
             <Flex>
               <Input type="number" name="min" placeholder="$ Min" marginRight="1rem" />
               <Input type="number" name="max" placeholder="$ Max" marginRight="1rem" />
-              <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' borderRadius={0} border={'1px solid black'}  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
+              <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' borderRadius={0} border={'1px solid black'} type="submit"  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
                   Apply
               </Button>
             </Flex>
@@ -64,7 +64,7 @@ const SideBarFilter = ({ onPriceRangeChange, setFilteredProducts, products }) =>
                   <Flex pb={3}>
                     <Input type="number" name="min" placeholder="$ Min" marginRight="1rem" />
                     <Input type="number" name="max" placeholder="$ Max" marginRight="1rem" />
-                    <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' borderRadius={0} border={'1px solid black'}  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
+                    <Button fontWeight={'regular'} px={'2rem'} bg='white' color='black' type="submit" borderRadius={0} border={'1px solid black'}  _hover={{  color: 'rgb(255, 160, 76)', borderColor: 'rgb(255, 160, 76)' }} transition='all .3s ease' >
                         Apply
                     </Button>
                   </Flex>

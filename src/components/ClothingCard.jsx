@@ -1,7 +1,6 @@
 import { Box, Button, Flex, Heading, Img, Text, Stack } from "@chakra-ui/react"
 import ClothingImage from '../assets/ClothingImage.jpeg'
 import { Link } from 'react-router-dom';
-import NonUserNavBar from "./NavBar/NonUserNavBar";
 
 const ClothingCard = () => {
   return (

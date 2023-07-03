@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Img, Text, Stack } from "@chakra-ui/react"
+import { Box, Button, Heading, Img, Text, Stack } from "@chakra-ui/react"
 import kitchen from '../assets/tienda-kitchen.png'
 import { Link } from 'react-router-dom';
 

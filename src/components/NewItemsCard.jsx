@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Text, Flex, Image, Center, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, Image } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -7,19 +7,9 @@ const NewItemsCard = ({ products }) => {
   const newProducts = products.slice(-4);
 
   return (
-        <Box width={{ sm: '100%', '2xl': '1400px' }} m='0px auto 3rem auto' px={3}>
+        <Box width={{ sm: '100%', '2xl': '1400px' }} m='.5rem auto 3rem auto' px={3}>
             <Flex justify={'flex-end'}>
                 <Link to='/products'>
-                {/* <Button
-                rightIcon={<ArrowForwardIcon />}
-                border='2px solid rgb(255, 160, 76)'
-                _hover={{ bg: 'rgb(255, 160, 76)', color: 'white' }}
-                transition='all 0.3s ease'
-                variant='outline'
-                borderRadius={0}
-                >
-                    Shop All
-                </Button> */}
                 <Flex align={'center'} className='button style1'>
                     <Text>Shop All</Text>
                     <ArrowForwardIcon ml={2}/>
@@ -31,7 +21,7 @@ const NewItemsCard = ({ products }) => {
                 </Heading>
             <Flex overflowX="scroll" justify="space-between" w={'100%'}>
                 {newProducts.map(product => (
-                    <Link to={`/products/${product.title}`}>
+                    <Link to={`/products/${product.title}`} key={product.id}>
                         <Box
                         w={{base: '18.35rem', md: '20rem'}}
                         transition="border-color 0.3s ease"

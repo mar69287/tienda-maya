@@ -23,7 +23,6 @@ const CategoryPage = () => {
     const filtered = products.filter(product => (
       product.price >= min && product.price <= max
     ));
-    console.log(filtered)
     setFilteredProducts(filtered);
   };
 
@@ -31,10 +30,7 @@ const CategoryPage = () => {
     if (priceRange.min === '' && priceRange.max === '') {
       setFilteredProducts(products); 
     } else {
-      const filtered = products.filter(product => (
-        product.price >= priceRange.min && product.price <= priceRange.max
-      ));
-      setFilteredProducts(filtered);
+      handlePriceRangeChange(priceRange.min, priceRange.max)
     }
   }, [products, priceRange]);
 

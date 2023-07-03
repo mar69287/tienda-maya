@@ -21,23 +21,15 @@ const ProductsPage = () => {
     const filtered = products.filter(product => (
       product.price >= min && product.price <= max
     ));
-    console.log(filtered)
     setFilteredProducts(filtered);
   };
 
   useEffect(() => {
-    const filterProducts = async () => {
-      if (priceRange.min === '' && priceRange.max === '') {
-        setFilteredProducts(products);
-      } else {
-        const filtered = products.filter(product => (
-          product.price >= priceRange.min && product.price <= priceRange.max
-        ));
-        setFilteredProducts(filtered);
-      }
-    };
-
-    filterProducts();
+    if (priceRange.min === '' && priceRange.max === '') {
+      setFilteredProducts(products); 
+    } else {
+      handlePriceRangeChange(priceRange.min, priceRange.max)
+    }
   }, [products, priceRange]);
 
   return (

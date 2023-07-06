@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ClothingCard = () => {
   return (
-    <Box w="100%" h="40rem" position='relative'>
+    <Box w="100%" h={{base: '30rem', md: "40rem"}} position='relative'>
         <Img src={ClothingImage} h='100%' w='100%' objectFit='cover' objectPosition='center' />
         <Stack
           direction='column'

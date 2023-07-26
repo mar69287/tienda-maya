@@ -18,9 +18,13 @@ const ProductsPage = () => {
   }, [])
 
   const handlePriceRangeChange = (min, max) => {
-    const filtered = products.filter(product => (
-      product.price >= min && product.price <= max
-    ));
+    const parsedMin = parseInt(min);
+    const parsedMax = parseInt(max);
+
+    const clampedMin = isNaN(parsedMin) ? 0 : parsedMin;
+    const clampedMax = isNaN(parsedMax) ? 100 : parsedMax;
+
+    const filtered = products.filter((product) => product.price >= clampedMin && product.price <= clampedMax);
     setFilteredProducts(filtered);
   };
 
